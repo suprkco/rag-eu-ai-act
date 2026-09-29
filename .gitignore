@@ -15,6 +15,7 @@ out/
 *.db-wal
 .DS_Store
 .source-cache/
+.lightrag-corpus/
 web/test-results/
 web/playwright-report/
 web/tsconfig.tsbuildinfo

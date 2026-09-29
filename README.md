@@ -93,7 +93,7 @@ Recorded locally on 2026-09-29, Python 3.10.4 / Windows, using BM25 without an L
 | Expected article found in top 5 chunks | 20/20 (100%) |
 | Mean reciprocal rank at 5 | 0.925 |
 | Abstention on unrelated questions | 5/5 |
-| Backend tests | 11 passed; pgvector integration requires a dedicated database |
+| Backend tests | 13 passed; pgvector integration requires a dedicated database |
 | Browser tests | 2 passed: evidence flow and mobile layout |
 
 These are **development-set results**, not a held-out benchmark, legal accuracy score, or production guarantee. Questions were authored against this small corpus. Five easy negative examples do not establish reliable abstention on difficult near-domain questions. [Per-question results, hashes and environment](evaluation/results.json) are committed.
@@ -107,6 +107,8 @@ Reproduce with `python -m scripts.evaluate`, `pytest -q`, and `ruff check .`. Ru
 - **Evidence owns citations.** Source URLs come from the corpus. Unknown model citation IDs cause a failure, not silent acceptance.
 - **Failure is explicit.** No matching chunks produces an abstention; model failures return an error rather than invented prose.
 - **Separate measurements.** Retrieval quality, protocol correctness and generated-answer faithfulness are different questions.
+
+An [attributed HKUDS/LightRAG comparison harness](docs/open-source-baseline.md) exports this corpus and measures source-document references from an external LightRAG instance. It is not a copy of the upstream engine, and no live LightRAG performance is claimed.
 
 ## Limitations and next steps
 
