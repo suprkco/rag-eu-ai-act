@@ -1,0 +1,335 @@
+{
+  "timestamp": "2026-09-29T17:07:20.253018+00:00",
+  "python": "3.10.4",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "mode": "BM25 / no LLM",
+  "corpus_sha256": "2562ee6fe99c635c4a088fa7fd40c97f57639f04166fb2b6d12fe2b1c5b10d98",
+  "dataset_sha256": "f466527c317a06e09deec27d58d8402bced09f1f4fddc753bb1b25e3d3ac911b",
+  "in_scope": 20,
+  "out_of_scope": 5,
+  "article_hit_at_5": 1.0,
+  "mrr_at_5": 0.925,
+  "out_of_scope_abstention": 1.0,
+  "cases": [
+    {
+      "question": "What human oversight is required for high-risk AI systems?",
+      "expected": "ai-act-14",
+      "retrieved": [
+        "ai-act-14",
+        "ai-act-14",
+        "ai-act-14",
+        "ai-act-14",
+        "ai-act-14"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.239
+    },
+    {
+      "question": "What transparency obligations apply to synthetic audio video and deep fake content?",
+      "expected": "ai-act-50",
+      "retrieved": [
+        "ai-act-50",
+        "ai-act-50",
+        "ai-act-50",
+        "ai-act-50",
+        "ai-act-50"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.097
+    },
+    {
+      "question": "What is the risk management system for high-risk AI?",
+      "expected": "ai-act-9",
+      "retrieved": [
+        "ai-act-9",
+        "ai-act-9",
+        "ai-act-9",
+        "ai-act-9",
+        "ai-act-9"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.163
+    },
+    {
+      "question": "What are the AI literacy obligations for staff?",
+      "expected": "ai-act-4",
+      "retrieved": [
+        "ai-act-4",
+        "ai-act-50",
+        "ai-act-53",
+        "ai-act-53",
+        "ai-act-53"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.084
+    },
+    {
+      "question": "What data governance practices apply to training validation and testing data sets?",
+      "expected": "ai-act-10",
+      "retrieved": [
+        "ai-act-10",
+        "ai-act-10",
+        "ai-act-10",
+        "ai-act-10",
+        "ai-act-10"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.13
+    },
+    {
+      "question": "What accuracy robustness and cybersecurity requirements apply to high-risk AI systems?",
+      "expected": "ai-act-15",
+      "retrieved": [
+        "ai-act-15",
+        "ai-act-15",
+        "ai-act-15",
+        "ai-act-15",
+        "ai-act-13"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.197
+    },
+    {
+      "question": "What instructions for use must accompany high-risk AI systems?",
+      "expected": "ai-act-13",
+      "retrieved": [
+        "ai-act-15",
+        "ai-act-13",
+        "ai-act-6",
+        "ai-act-13",
+        "ai-act-6"
+      ],
+      "rank": 2,
+      "abstained": false,
+      "milliseconds": 0.188
+    },
+    {
+      "question": "What prohibited AI practices involve social scoring?",
+      "expected": "ai-act-5",
+      "retrieved": [
+        "ai-act-5",
+        "ai-act-5",
+        "ai-act-5",
+        "ai-act-5",
+        "ai-act-5"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.101
+    },
+    {
+      "question": "What obligations apply to providers of general-purpose AI models and copyright?",
+      "expected": "ai-act-53",
+      "retrieved": [
+        "ai-act-53",
+        "ai-act-53",
+        "ai-act-53",
+        "ai-act-53",
+        "ai-act-53"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.142
+    },
+    {
+      "question": "How are AI systems classified as high-risk?",
+      "expected": "ai-act-6",
+      "retrieved": [
+        "ai-act-15",
+        "ai-act-6",
+        "ai-act-9",
+        "ai-act-9",
+        "ai-act-14"
+      ],
+      "rank": 2,
+      "abstained": false,
+      "milliseconds": 0.174
+    },
+    {
+      "question": "What principles require personal data to be accurate and kept up to date?",
+      "expected": "gdpr-5",
+      "retrieved": [
+        "gdpr-5",
+        "ai-act-53",
+        "gdpr-5",
+        "gdpr-5",
+        "gdpr-6"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.112
+    },
+    {
+      "question": "What lawful bases permit processing personal data?",
+      "expected": "gdpr-6",
+      "retrieved": [
+        "gdpr-6",
+        "gdpr-6",
+        "gdpr-6",
+        "gdpr-6",
+        "gdpr-17"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.123
+    },
+    {
+      "question": "What restrictions apply to processing genetic and biometric data?",
+      "expected": "gdpr-9",
+      "retrieved": [
+        "gdpr-9",
+        "gdpr-9",
+        "ai-act-5",
+        "ai-act-50",
+        "ai-act-5"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.115
+    },
+    {
+      "question": "When must a controller respond to a data subject request within one month?",
+      "expected": "gdpr-12",
+      "retrieved": [
+        "gdpr-12",
+        "gdpr-12",
+        "gdpr-6",
+        "gdpr-12",
+        "gdpr-12"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.151
+    },
+    {
+      "question": "What information must be provided when personal data are collected from the data subject?",
+      "expected": "gdpr-13",
+      "retrieved": [
+        "gdpr-13",
+        "gdpr-13",
+        "gdpr-13",
+        "gdpr-13",
+        "gdpr-13"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.183
+    },
+    {
+      "question": "Can a data subject obtain a copy of personal data undergoing processing?",
+      "expected": "gdpr-15",
+      "retrieved": [
+        "gdpr-15",
+        "gdpr-15",
+        "gdpr-13",
+        "gdpr-17",
+        "gdpr-17"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.15
+    },
+    {
+      "question": "When can a data subject request erasure of personal data?",
+      "expected": "gdpr-17",
+      "retrieved": [
+        "gdpr-13",
+        "gdpr-17",
+        "gdpr-15",
+        "gdpr-17",
+        "gdpr-9"
+      ],
+      "rank": 2,
+      "abstained": false,
+      "milliseconds": 0.138
+    },
+    {
+      "question": "What rights apply to decisions based solely on automated processing including profiling?",
+      "expected": "gdpr-22",
+      "retrieved": [
+        "gdpr-22",
+        "gdpr-22",
+        "gdpr-22",
+        "gdpr-22",
+        "gdpr-13"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.146
+    },
+    {
+      "question": "What data protection by design and by default measures are required?",
+      "expected": "gdpr-25",
+      "retrieved": [
+        "gdpr-25",
+        "gdpr-25",
+        "gdpr-25",
+        "gdpr-5",
+        "ai-act-9"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.101
+    },
+    {
+      "question": "What security of processing measures include pseudonymisation and encryption?",
+      "expected": "gdpr-32",
+      "retrieved": [
+        "gdpr-32",
+        "gdpr-6",
+        "gdpr-32",
+        "ai-act-10",
+        "gdpr-25"
+      ],
+      "rank": 1,
+      "abstained": false,
+      "milliseconds": 0.088
+    },
+    {
+      "question": "How do I bake banana bread?",
+      "expected": null,
+      "retrieved": [],
+      "rank": null,
+      "abstained": true,
+      "milliseconds": 0.027
+    },
+    {
+      "question": "Who won the football championship?",
+      "expected": null,
+      "retrieved": [],
+      "rank": null,
+      "abstained": true,
+      "milliseconds": 0.034
+    },
+    {
+      "question": "Calculate the orbital velocity of Jupiter",
+      "expected": null,
+      "retrieved": [],
+      "rank": null,
+      "abstained": true,
+      "milliseconds": 0.028
+    },
+    {
+      "question": "Recommend a hiking trail in Patagonia",
+      "expected": null,
+      "retrieved": [],
+      "rank": null,
+      "abstained": true,
+      "milliseconds": 0.028
+    },
+    {
+      "question": "What guitar strings should I buy?",
+      "expected": null,
+      "retrieved": [],
+      "rank": null,
+      "abstained": true,
+      "milliseconds": 0.027
+    }
+  ]
+}

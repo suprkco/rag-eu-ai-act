@@ -1,0 +1,11 @@
+The MIT license applies to the original software in this repository, not to
+third-party legislative text, official website branding or dependency code.
+
+Legislative excerpts are attributed individually in data/corpus.json to the
+European Commission AI Act Service Desk and the official legislation.gov.uk
+archive of EU Regulation 2016/679 as adopted. No endorsement is implied.
+The text is a limited normalized snapshot and is not an authoritative legal service.
+
+Source notices:
+https://commission.europa.eu/legal-notice_en
+https://www.legislation.gov.uk/developer/licence
