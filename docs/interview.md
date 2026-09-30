@@ -1,6 +1,6 @@
 # Five-minute interview walkthrough
 
-1. Start the API and frontend. Ask: **What human oversight is required for high-risk AI systems?** Open an Article 14 source link and compare the displayed excerpt.
+1. Run `python -m app.cli`. Ask: **What human oversight is required for high-risk AI systems?** Open an Article 14 source link from the terminal and compare the excerpt. The browser client is optional.
 2. Ask an unrelated question, such as **How do I bake banana bread?** Show the abstention instead of a fabricated answer.
 3. Open `evaluation/results.json`. Explain article hit@5 and MRR, and why the small development set overestimates generalization.
 4. Trace `load_chunks` → `BM25.search` → `/ask`. Explain that the default is extractive retrieval and that the Ollama generation path is optional.

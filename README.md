@@ -11,9 +11,15 @@ This prototype retrieves passages from 20 selected AI Act and GDPR articles and 
 
 ## Demo
 
-![Actual local demo: human oversight query and supporting sources](docs/demo.png)
+Run `python -m app.cli` for a terminal session, or ask one question:
 
-Run locally at **http://localhost:3000**. The default mode is extractive retrieval, not generated prose. No hosted service or API key is required. [Five-minute walkthrough](docs/interview.md).
+```sh
+python -m app.cli "What human oversight is required for high-risk AI systems?"
+```
+
+Answers include source excerpts, links and snapshot versions. `/quit` exits; questions are independent, not conversational memory. Add `--json` to a one-shot question for scripting. [Recorded terminal output](docs/terminal-demo.txt).
+
+The optional browser client at http://localhost:3000 uses the same plain, monospace presentation. Default retrieval requires no model or API key.
 
 ## Architecture
 
@@ -22,7 +28,7 @@ flowchart LR
     A[Official source snapshots] --> B[Numbered paragraphs and overlapping chunks]
     B --> C[BM25 baseline]
     B -. optional embeddings .-> D[Ollama + pgvector]
-    Q[Next.js question] --> F[FastAPI]
+    Q[Terminal or optional browser question] --> F[FastAPI]
     F --> C
     F -. optional .-> D
     C --> E[Evidence and source URLs]
@@ -48,16 +54,16 @@ docker compose up --build
 
 Open http://localhost:3000; interactive API documentation is at http://localhost:8000/docs. Services bind only to loopback on the host.
 
-Without Docker, use Python 3.10+ and Node 24:
+For the terminal, use Python 3.10+:
 
 ```sh
 python -m venv .venv
 # Activate .venv for your shell, then:
 python -m pip install -r requirements.txt -r requirements-dev.txt
-python -m uvicorn app.main:app --port 8000
+python -m app.cli
 ```
 
-In a second terminal:
+Optional browser client: start `python -m uvicorn app.main:app --port 8000`, then with Node 24 in another terminal:
 
 ```sh
 cd web
@@ -71,7 +77,7 @@ The bundled corpus makes the default demo network-independent after dependency i
 
 See [.env.example](.env.example). Set variables in the process environment; the backend does not automatically load `.env`.
 
-For synthesis, run a local Ollama service with `qwen2.5:3b` installed, then choose **Generated answer** in the UI. This model path has contract tests but has not been evaluated against a running model in the recorded benchmark.
+For synthesis, run a local Ollama service with `qwen2.5:3b` installed, then run `python -m app.cli --mode ollama`. This model path has contract tests but has not been evaluated against a running model in the recorded benchmark.
 
 For vector retrieval, install the `nomic-embed-text` Ollama model, set `DATABASE_URL` for a **dedicated** PostgreSQL database, then run:
 

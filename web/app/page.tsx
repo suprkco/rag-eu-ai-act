@@ -21,24 +21,24 @@ export default function Page() {
     finally {setBusy(false);}
   }
   return <main>
-    <header><a className="brand" href="https://github.com/suprkco/rag-eu-ai-act">KC / APPLIED AI</a><span className="badge">RESEARCH PROTOTYPE · v0.1</span></header>
-    <section className="hero"><p className="eyebrow">EVIDENCE BEFORE ANSWERS</p><h1>Explore the rules.<br/><em>Inspect the source.</em></h1><p className="intro">Search selected EU AI Act and GDPR articles. Every result includes the passage and the document it came from.</p></section>
+    <header><a className="brand" href="https://github.com/suprkco/rag-eu-ai-act">rag / evidence explorer</a><span>local research session</span></header>
+    <p className="intro">Terminal: <code>python -m app.cli</code> · 20 selected articles · source excerpts by default</p>
     <div className="workspace"><section className="query">
       <h2>Ask a question</h2><p className="muted">English questions · 20 selected articles</p>
       <form onSubmit={ask}><label htmlFor="question">Your research question</label><textarea id="question" value={question} onChange={e=>setQuestion(e.target.value)} minLength={5} maxLength={2000} required rows={5}/>
       <label htmlFor="mode">Response mode</label><select id="mode" value={mode} onChange={e=>setMode(e.target.value)}><option value="extractive">Source excerpts · no model required</option><option value="ollama">Generated answer · local Ollama required</option></select>
-      <button className="primary" disabled={busy}>{busy ? 'Retrieving evidence…' : 'Find supporting evidence →'}</button></form>
+      <button className="primary" disabled={busy}>{busy ? 'Retrieving evidence…' : 'Run query'}</button></form>
       <h3>Try a question</h3><div className="examples">{examples.map(example=><button key={example} onClick={()=>setQuestion(example)}>{example}</button>)}</div>
       <aside><strong>Know the scope</strong><p>A limited snapshot, not a complete or current legal database. GDPR text is the EU regulation as adopted in 2016. Results are research aids, not legal advice.</p></aside>
     </section><section className="results" aria-live="polite" aria-busy={busy}>
-      <div className="section-title"><h2>Evidence workspace</h2><span>{result ? `${result.citations.length} passages` : 'READY'}</span></div>
+      <div className="section-title"><h2>Output</h2><span>{result ? `${result.citations.length} passages` : 'READY'}</span></div>
       {error && <p role="alert" className="error">{error}</p>}
-      {!result && !error && <div className="empty"><div className="symbol">§</div><h3>{busy ? 'Reading the corpus…' : 'A clear path back to the text'}</h3><p>Submit a question to inspect matching passages, source links and version information.</p></div>}
+      {!result && !error && <div className="empty"><h3>{busy ? 'Reading the corpus…' : 'Waiting for input'}</h3><p>Submit a question to inspect matching passages, source links and version information.</p></div>}
       {result?.abstained && <aside>{result.answer} Try a more specific question within the listed corpus.</aside>}
       {result && !result.abstained && <>
         {result.mode === 'ollama' && <article><h3>Generated synthesis</h3><p className="answer">{result.answer}</p><small>Citation identifiers are checked; factual entailment still requires human review.</small></article>}
         {result.citations.map((c,i)=><article key={c.chunk_id}><div className="source-label">SOURCE {String(i+1).padStart(2,'0')}<span>RETRIEVAL SCORE {c.score.toFixed(2)}</span></div><h3><a href={c.url} target="_blank" rel="noreferrer">{c.title} ↗</a></h3><blockquote>{c.text}</blockquote><p className="version">{c.version.replace('; see fetched_at','')} · Snapshot {c.snapshot_date}</p></article>)}
       </>}
-    </section></div><footer>Built by Kilian Codaccioni · <a href="https://github.com/suprkco/rag-eu-ai-act">Code, evaluation & limitations ↗</a></footer>
+    </section></div><footer>rag / session · <a href="https://github.com/suprkco/rag-eu-ai-act">Code, evaluation & limitations ↗</a></footer>
   </main>;
 }
