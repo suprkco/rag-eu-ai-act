@@ -67,3 +67,18 @@ jobs:
           curl -fsS http://localhost:3000
       - if: always()
         run: docker compose down
+  deploy-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f deploy/Dockerfile -t rag-demo .
+      - run: |
+          docker run -d -p 8080:10000 -e PORT=10000 --name rag-demo rag-demo
+          for i in $(seq 1 30); do curl -fsS http://localhost:8080/health && break || sleep 2; done
+          curl -fsS http://localhost:8080/ | grep -q 'public demo'
+          curl -fsS -X POST http://localhost:8080/ask -H 'Content-Type: application/json' \
+            -d '{"question":"What human oversight is required for high-risk AI systems?"}' | grep -q trace_id
+          test "$(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:8080/ask -H 'Content-Type: application/json' -d '{"question":"human oversight","mode":"ollama"}')" = 400
+          curl -fsS http://localhost:8080/metrics | grep -q 'rag_requests_total{mode="extractive",outcome="answered"} 1.0'
+      - if: always()
+        run: docker logs rag-demo

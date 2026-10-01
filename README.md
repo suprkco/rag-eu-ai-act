@@ -1,6 +1,7 @@
 # EU AI Act Evidence Explorer
 
 [![CI](https://github.com/suprkco/rag-eu-ai-act/actions/workflows/ci.yml/badge.svg)](https://github.com/suprkco/rag-eu-ai-act/actions/workflows/ci.yml)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/suprkco/rag-eu-ai-act)
 
 **A local retrieval and optional generation prototype with inspectable legislative evidence.**
 
@@ -42,7 +43,7 @@ flowchart LR
 
 ## Tech stack
 
-Python, FastAPI, Pydantic, Next.js, React, TypeScript, BM25, pytest, Playwright and GitHub Actions. Optional adapters use Ollama, PostgreSQL and pgvector. The PostgreSQL connection can target a dedicated Supabase database; no Supabase or Vercel deployment is claimed.
+Python, FastAPI, Pydantic, Next.js, React, TypeScript, BM25, Prometheus, pytest, Playwright, Docker and GitHub Actions. Optional adapters use Ollama, PostgreSQL and pgvector. The PostgreSQL connection can target a dedicated Supabase database.
 
 ## Quickstart
 
@@ -88,7 +89,13 @@ python -m app.vector
 
 Ingestion explicitly creates `legal_chunks` and upserts records; use a limited read-only role for serving queries. For Supabase, enable the vector extension and use a server-side database connection with TLS (`sslmode=require`). Never expose that connection string to the browser. The adapter expects 768-dimensional embeddings; changing models requires rebuilding the corpus in a fresh table/database. Cloud deployment and semantic-retrieval quality remain unvalidated.
 
-For a separate frontend deployment, set `NEXT_PUBLIC_API_URL` at build time and `WEB_ORIGINS` on the API. Vercel is a possible deployment target, not a deployed demo.
+### Public deployment
+
+[deploy/Dockerfile](deploy/Dockerfile) builds one container: the web client is exported statically and served by FastAPI on the same origin, so there is no CORS setup and no second service. It runs BM25 only (`ALLOWED_MODES=extractive`): no model, no database and no secret, which keeps a free instance cheap and safe to expose. Generation modes return HTTP 400 there instead of timing out. CI builds and smoke-tests this exact image.
+
+On Render, choose **New > Blueprint** and select this repository; [render.yaml](render.yaml) configures the free Docker service and its `/health` check. The same image runs on Railway or Fly.io, which inject `PORT`. A free Render instance sleeps when idle, so the first request can take about a minute.
+
+For a separate frontend deployment instead, set `NEXT_PUBLIC_API_URL` at build time and `WEB_ORIGINS` on the API.
 
 ## Evaluation
 
@@ -101,12 +108,18 @@ Recorded locally on 2026-09-29, Python 3.10.4 / Windows, using BM25 without an L
 | Expected article found in top 5 chunks | 20/20 (100%) |
 | Mean reciprocal rank at 5 | 0.925 |
 | Abstention on unrelated questions | 5/5 |
-| Backend tests (updated 1 October) | 16 passed; pgvector integration requires a dedicated database |
+| Backend tests (updated 1 October) | 22 passed, including observability; pgvector integration requires a dedicated database |
 | Browser tests | 2 passed: evidence flow and mobile layout |
 
 These are **development-set results**, not a held-out benchmark, legal accuracy score, or production guarantee. Questions were authored against this small corpus. Five easy negative examples do not establish reliable abstention on difficult near-domain questions. [Per-question results, hashes and environment](evaluation/results.json) are committed.
 
 Reproduce with `python -m scripts.evaluate`, `pytest -q`, and `ruff check .`. Run `npx playwright test` in `web/` with both services running. CI also exercises the pgvector SQL round trip using synthetic embeddings; it does not measure a real embedding model.
+
+## Observability
+
+`/metrics` exposes Prometheus series for the outcome mix (answered, abstained, retrieval or generation error), retrieval confidence, citations returned, model token usage, per-stage latency, and generation failures classified by cause: backend unavailable, invalid schema, citation outside the retrieved evidence, or truncated output. Each response returns a `trace_id` matching one JSON log line with stage timings, retrieved and cited chunk IDs, and a hash of the question instead of its text.
+
+The point is to catch silent drift: a rising abstention rate, a falling median retrieval score or any citation outside the evidence set. [Metrics, PromQL alerts and a debugging runbook](docs/observability.md).
 
 ## Design choices
 
@@ -124,4 +137,4 @@ The corpus covers only 20 articles in English. The Commission pages are snapshot
 
 Citation membership does not prove entailment. Prompt-injection defenses are limited; generated answers still require human review. The BM25 score threshold is heuristic. No authentication, public-hosting rate limit, production monitoring or multi-tenant isolation is implemented. Keep this prototype local.
 
-Next: independently reviewed test cases, near-domain negative questions, real embedding/generation comparisons, answer-faithfulness evaluation, and versioned legal updates. Code was developed with AI assistance; no employer or client materials are used. MIT applies to original code; see [NOTICE](NOTICE) for source texts.
+Next: independently reviewed test cases, near-domain negative questions, real embedding/generation comparisons, answer-faithfulness evaluation, and versioned legal updates. Architected and built by Kilian Codaccioni as auditable AI systems, using generative AI as a productivity multiplier, with a strict focus on evaluation, fact validation and reproducibility. No employer or client materials are used. MIT applies to original code; see [NOTICE](NOTICE) for source texts.

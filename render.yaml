@@ -1,0 +1,10 @@
+# Render Blueprint: New > Blueprint > select this repository. Free plan sleeps after inactivity.
+services:
+  - type: web
+    name: rag-eu-ai-act
+    runtime: docker
+    plan: free
+    dockerfilePath: ./deploy/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
