@@ -1,0 +1,399 @@
+{
+  "created_at": "2026-10-01T10:29:14.418954+00:00",
+  "python": "3.10.4",
+  "mode": "BM25 only; no generation",
+  "dataset_sha256": "ec8d8e9c2ce73ee0d36d71862cf69fa73207c9485dda39397f54ed93729240fc",
+  "corpus_sha256": "b22c22c23a7765b538bfd0c39dd4e77cf49a4bd2710f066f5890cd441bb0e9a3",
+  "scope": "AI-assisted, corpus-aware challenge cases authored after the original development evaluation, before this run. No retriever tuning. Not independently authored or a blind held-out benchmark. Expected articles are relevance labels for this snapshot, not legal advice.",
+  "rows": [
+    {
+      "id": "new-01",
+      "kind": "answerable",
+      "question": "An operator needs to stop a high-risk system when it behaves unexpectedly. Which safeguards concern the person supervising it?",
+      "relevant_articles": [
+        "ai-act-14"
+      ],
+      "retrieved_articles": [
+        "ai-act-14",
+        "ai-act-9",
+        "ai-act-9",
+        "ai-act-14",
+        "ai-act-13"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-14-p3-w0",
+        "ai-act-9-p3-w0",
+        "ai-act-9-p2-w0",
+        "ai-act-14-p4-w0",
+        "ai-act-13-p3-w180"
+      ],
+      "hit_at_5": true,
+      "empty_retrieval": false,
+      "milliseconds": 0.2272000419907272
+    },
+    {
+      "id": "new-02",
+      "kind": "answerable",
+      "question": "Our AI operators have different training backgrounds. Which text addresses their competence and knowledge?",
+      "relevant_articles": [
+        "ai-act-4"
+      ],
+      "retrieved_articles": [
+        "ai-act-4",
+        "ai-act-14",
+        "ai-act-9",
+        "ai-act-50",
+        "ai-act-15"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-4-p1-w0",
+        "ai-act-14-p5-w0",
+        "ai-act-9-p5-w0",
+        "ai-act-50-p2-w0",
+        "ai-act-15-p5-w0"
+      ],
+      "hit_at_5": true,
+      "empty_retrieval": false,
+      "milliseconds": 0.15059998258948326
+    },
+    {
+      "id": "new-03",
+      "kind": "answerable",
+      "question": "A training sample contains errors and missing values. Which article discusses examining data sets for shortcomings?",
+      "relevant_articles": [
+        "ai-act-10"
+      ],
+      "retrieved_articles": [
+        "ai-act-10",
+        "ai-act-10",
+        "ai-act-10",
+        "ai-act-10",
+        "ai-act-10"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-10-p3-w0",
+        "ai-act-10-p2-w0",
+        "ai-act-10-p1-w0",
+        "ai-act-10-p6-w0",
+        "ai-act-10-p4-w0"
+      ],
+      "hit_at_5": true,
+      "empty_retrieval": false,
+      "milliseconds": 0.16639998648315668
+    },
+    {
+      "id": "new-04",
+      "kind": "answerable",
+      "question": "Which safeguards concern recovering access to personal information after a physical incident?",
+      "relevant_articles": [
+        "gdpr-32"
+      ],
+      "retrieved_articles": [
+        "gdpr-32",
+        "gdpr-15",
+        "ai-act-9",
+        "ai-act-10",
+        "gdpr-15"
+      ],
+      "retrieved_chunk_ids": [
+        "gdpr-32-p1-w0",
+        "gdpr-15-p2-w0",
+        "ai-act-9-p3-w0",
+        "ai-act-10-p5-w0",
+        "gdpr-15-p1-w0"
+      ],
+      "hit_at_5": true,
+      "empty_retrieval": false,
+      "milliseconds": 0.11359999189153314
+    },
+    {
+      "id": "new-05",
+      "kind": "answerable",
+      "question": "A person wants to see the information an organisation holds about them and obtain a copy. Where is this addressed?",
+      "relevant_articles": [
+        "gdpr-15"
+      ],
+      "retrieved_articles": [
+        "gdpr-13",
+        "gdpr-15",
+        "gdpr-12",
+        "gdpr-15",
+        "gdpr-32"
+      ],
+      "retrieved_chunk_ids": [
+        "gdpr-13-p1-w0",
+        "gdpr-15-p4-w0",
+        "gdpr-12-p1-w0",
+        "gdpr-15-p2-w0",
+        "gdpr-32-p4-w0"
+      ],
+      "hit_at_5": true,
+      "empty_retrieval": false,
+      "milliseconds": 0.12400001287460327
+    },
+    {
+      "id": "new-06",
+      "kind": "answerable",
+      "question": "Personal information is no longer necessary for its original purpose. Which provision discusses its deletion?",
+      "relevant_articles": [
+        "gdpr-17"
+      ],
+      "retrieved_articles": [
+        "gdpr-17",
+        "gdpr-5",
+        "ai-act-13",
+        "gdpr-13",
+        "gdpr-12"
+      ],
+      "retrieved_chunk_ids": [
+        "gdpr-17-p1-w0",
+        "gdpr-5-p1-w0",
+        "ai-act-13-p3-w0",
+        "gdpr-13-p2-w0",
+        "gdpr-12-p6-w0"
+      ],
+      "hit_at_5": true,
+      "empty_retrieval": false,
+      "milliseconds": 0.1639999682083726
+    },
+    {
+      "id": "new-07",
+      "kind": "answerable",
+      "question": "Before deployment, how should foreseeable misuse and risks of a high-risk system be handled?",
+      "relevant_articles": [
+        "ai-act-9"
+      ],
+      "retrieved_articles": [
+        "ai-act-9",
+        "ai-act-14",
+        "ai-act-14",
+        "ai-act-13",
+        "ai-act-6"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-9-p2-w0",
+        "ai-act-14-p2-w0",
+        "ai-act-14-p3-w0",
+        "ai-act-13-p3-w0",
+        "ai-act-6-p4-w0"
+      ],
+      "hit_at_5": true,
+      "empty_retrieval": false,
+      "milliseconds": 0.1352000399492681
+    },
+    {
+      "id": "new-08",
+      "kind": "answerable",
+      "question": "Which documentation should tell a deployer about a high-risk system's capabilities and limitations?",
+      "relevant_articles": [
+        "ai-act-13"
+      ],
+      "retrieved_articles": [
+        "ai-act-13",
+        "ai-act-14",
+        "ai-act-6",
+        "ai-act-14",
+        "ai-act-53"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-13-p3-w0",
+        "ai-act-14-p4-w0",
+        "ai-act-6-p4-w0",
+        "ai-act-14-p3-w0",
+        "ai-act-53-p1-w0"
+      ],
+      "hit_at_5": true,
+      "empty_retrieval": false,
+      "milliseconds": 0.13100000796839595
+    },
+    {
+      "id": "missing-01",
+      "kind": "unanswerable",
+      "question": "What is the exact annual GDPR compliance software subscription cost for a company with 80 employees?",
+      "relevant_articles": [],
+      "retrieved_articles": [
+        "gdpr-17",
+        "gdpr-5",
+        "gdpr-25",
+        "gdpr-25",
+        "gdpr-32"
+      ],
+      "retrieved_chunk_ids": [
+        "gdpr-17-p2-w0",
+        "gdpr-5-p2-w0",
+        "gdpr-25-p1-w0",
+        "gdpr-25-p3-w0",
+        "gdpr-32-p3-w0"
+      ],
+      "hit_at_5": null,
+      "empty_retrieval": false,
+      "milliseconds": 0.12830004561692476
+    },
+    {
+      "id": "missing-02",
+      "kind": "unanswerable",
+      "question": "Which AI Act article gives the technical PostgreSQL command to encrypt stored personal data?",
+      "relevant_articles": [],
+      "retrieved_articles": [
+        "gdpr-5",
+        "gdpr-32",
+        "gdpr-15",
+        "gdpr-5",
+        "gdpr-17"
+      ],
+      "retrieved_chunk_ids": [
+        "gdpr-5-p1-w0",
+        "gdpr-32-p2-w0",
+        "gdpr-15-p1-w0",
+        "gdpr-5-p1-w180",
+        "gdpr-17-p2-w0"
+      ],
+      "hit_at_5": null,
+      "empty_retrieval": false,
+      "milliseconds": 0.3293999470770359
+    },
+    {
+      "id": "missing-03",
+      "kind": "unanswerable",
+      "question": "What deadline in hours does Article 33 set for notifying a personal data breach?",
+      "relevant_articles": [],
+      "retrieved_articles": [
+        "ai-act-10",
+        "gdpr-25",
+        "gdpr-15",
+        "gdpr-17",
+        "gdpr-6"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-10-p5-w0",
+        "gdpr-25-p3-w0",
+        "gdpr-15-p1-w0",
+        "gdpr-17-p2-w0",
+        "gdpr-6-p4-w0"
+      ],
+      "hit_at_5": null,
+      "empty_retrieval": false,
+      "milliseconds": 0.19340001745149493
+    },
+    {
+      "id": "missing-04",
+      "kind": "unanswerable",
+      "question": "What exact penalty did the French regulator impose on our company last week for automated processing?",
+      "relevant_articles": [],
+      "retrieved_articles": [
+        "gdpr-22",
+        "gdpr-13",
+        "gdpr-13",
+        "gdpr-15"
+      ],
+      "retrieved_chunk_ids": [
+        "gdpr-22-p1-w0",
+        "gdpr-13-p2-w180",
+        "gdpr-13-p2-w0",
+        "gdpr-15-p1-w0"
+      ],
+      "hit_at_5": null,
+      "empty_retrieval": false,
+      "milliseconds": 0.0923000043258071
+    },
+    {
+      "id": "ambiguous-01",
+      "kind": "ambiguous",
+      "question": "Can we use this AI system for our customers?",
+      "relevant_articles": [],
+      "reason": "No system, role, use or jurisdiction details supplied; retrieval cannot decide applicability.",
+      "retrieved_articles": [
+        "ai-act-5",
+        "ai-act-5",
+        "ai-act-14",
+        "ai-act-14",
+        "ai-act-5"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-5-p2-w180",
+        "ai-act-5-p2-w0",
+        "ai-act-14-p3-w0",
+        "ai-act-14-p4-w0",
+        "ai-act-5-p3-w0"
+      ],
+      "hit_at_5": null,
+      "empty_retrieval": false,
+      "milliseconds": 0.1309000072069466
+    },
+    {
+      "id": "ambiguous-02",
+      "kind": "ambiguous",
+      "question": "Must we delete all these records immediately?",
+      "relevant_articles": [],
+      "reason": "Purpose, retention obligations and circumstances unspecified.",
+      "retrieved_articles": [
+        "ai-act-5"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-5-p3-w0"
+      ],
+      "hit_at_5": null,
+      "empty_retrieval": false,
+      "milliseconds": 0.04569999873638153
+    },
+    {
+      "id": "ambiguous-03",
+      "kind": "ambiguous",
+      "question": "Do we need consent for this processing?",
+      "relevant_articles": [],
+      "reason": "No purpose, data categories or context; a lawful-basis decision cannot be inferred.",
+      "retrieved_articles": [
+        "gdpr-9",
+        "gdpr-13",
+        "gdpr-6",
+        "gdpr-6",
+        "gdpr-17"
+      ],
+      "retrieved_chunk_ids": [
+        "gdpr-9-p2-w0",
+        "gdpr-13-p2-w0",
+        "gdpr-6-p1-w0",
+        "gdpr-6-p4-w0",
+        "gdpr-17-p1-w0"
+      ],
+      "hit_at_5": null,
+      "empty_retrieval": false,
+      "milliseconds": 0.06619998021051288
+    },
+    {
+      "id": "ambiguous-04",
+      "kind": "ambiguous",
+      "question": "Is our model high-risk?",
+      "relevant_articles": [],
+      "reason": "Intended use, system and role unspecified.",
+      "retrieved_articles": [
+        "ai-act-15",
+        "ai-act-6",
+        "ai-act-14",
+        "ai-act-9",
+        "ai-act-6"
+      ],
+      "retrieved_chunk_ids": [
+        "ai-act-15-p5-w0",
+        "ai-act-6-p2-w0",
+        "ai-act-14-p4-w0",
+        "ai-act-9-p6-w0",
+        "ai-act-6-p5-w0"
+      ],
+      "hit_at_5": null,
+      "empty_retrieval": false,
+      "milliseconds": 0.0942000187933445
+    }
+  ],
+  "summary": {
+    "answerable_cases": 8,
+    "answerable_hit_at_5_count": 8,
+    "unanswerable_cases": 4,
+    "unanswerable_empty_retrieval_count": 0,
+    "ambiguous_cases": 4,
+    "ambiguous_nonempty_retrieval_count": 4,
+    "generated_answer_faithfulness": null,
+    "clarification_accuracy": null
+  },
+  "hash_policy": "UTF-8 bytes with CRLF normalized to LF for cross-platform checkouts"
+}

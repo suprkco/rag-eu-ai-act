@@ -15,7 +15,7 @@ app.add_middleware(CORSMiddleware, allow_origins=os.getenv('WEB_ORIGINS', 'http:
 
 class Question(BaseModel):
     question: str = Field(min_length=5, max_length=2000)
-    mode: Literal['extractive', 'ollama'] = 'extractive'
+    mode: Literal['extractive', 'ollama', 'model'] = 'extractive'
     top_k: int = Field(default=5, ge=1, le=5)
 
 @lru_cache

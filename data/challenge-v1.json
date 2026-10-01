@@ -1,0 +1,21 @@
+{
+  "scope": "AI-assisted, corpus-aware challenge cases authored after the original development evaluation, before this run. No retriever tuning. Not independently authored or a blind held-out benchmark. Expected articles are relevance labels for this snapshot, not legal advice.",
+  "cases": [
+    {"id":"new-01","kind":"answerable","question":"An operator needs to stop a high-risk system when it behaves unexpectedly. Which safeguards concern the person supervising it?","relevant_articles":["ai-act-14"]},
+    {"id":"new-02","kind":"answerable","question":"Our AI operators have different training backgrounds. Which text addresses their competence and knowledge?","relevant_articles":["ai-act-4"]},
+    {"id":"new-03","kind":"answerable","question":"A training sample contains errors and missing values. Which article discusses examining data sets for shortcomings?","relevant_articles":["ai-act-10"]},
+    {"id":"new-04","kind":"answerable","question":"Which safeguards concern recovering access to personal information after a physical incident?","relevant_articles":["gdpr-32"]},
+    {"id":"new-05","kind":"answerable","question":"A person wants to see the information an organisation holds about them and obtain a copy. Where is this addressed?","relevant_articles":["gdpr-15"]},
+    {"id":"new-06","kind":"answerable","question":"Personal information is no longer necessary for its original purpose. Which provision discusses its deletion?","relevant_articles":["gdpr-17"]},
+    {"id":"new-07","kind":"answerable","question":"Before deployment, how should foreseeable misuse and risks of a high-risk system be handled?","relevant_articles":["ai-act-9"]},
+    {"id":"new-08","kind":"answerable","question":"Which documentation should tell a deployer about a high-risk system's capabilities and limitations?","relevant_articles":["ai-act-13"]},
+    {"id":"missing-01","kind":"unanswerable","question":"What is the exact annual GDPR compliance software subscription cost for a company with 80 employees?","relevant_articles":[]},
+    {"id":"missing-02","kind":"unanswerable","question":"Which AI Act article gives the technical PostgreSQL command to encrypt stored personal data?","relevant_articles":[]},
+    {"id":"missing-03","kind":"unanswerable","question":"What deadline in hours does Article 33 set for notifying a personal data breach?","relevant_articles":[]},
+    {"id":"missing-04","kind":"unanswerable","question":"What exact penalty did the French regulator impose on our company last week for automated processing?","relevant_articles":[]},
+    {"id":"ambiguous-01","kind":"ambiguous","question":"Can we use this AI system for our customers?","relevant_articles":[],"reason":"No system, role, use or jurisdiction details supplied; retrieval cannot decide applicability."},
+    {"id":"ambiguous-02","kind":"ambiguous","question":"Must we delete all these records immediately?","relevant_articles":[],"reason":"Purpose, retention obligations and circumstances unspecified."},
+    {"id":"ambiguous-03","kind":"ambiguous","question":"Do we need consent for this processing?","relevant_articles":[],"reason":"No purpose, data categories or context; a lawful-basis decision cannot be inferred."},
+    {"id":"ambiguous-04","kind":"ambiguous","question":"Is our model high-risk?","relevant_articles":[],"reason":"Intended use, system and role unspecified."}
+  ]
+}

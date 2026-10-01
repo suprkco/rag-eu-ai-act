@@ -19,7 +19,7 @@ def render(result):
 def main():
     parser = argparse.ArgumentParser(description='Search selected EU AI Act and GDPR articles in your terminal.')
     parser.add_argument('question', nargs='?')
-    parser.add_argument('--mode', choices=['extractive', 'ollama'], default='extractive')
+    parser.add_argument('--mode', choices=['extractive', 'ollama', 'model'], default='extractive')
     parser.add_argument('--json', action='store_true', help='Emit machine-readable JSON; requires a question')
     args = parser.parse_args()
     if args.json and not args.question:

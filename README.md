@@ -77,7 +77,7 @@ The bundled corpus makes the default demo network-independent after dependency i
 
 See [.env.example](.env.example). Set variables in the process environment; the backend does not automatically load `.env`.
 
-For synthesis, run a local Ollama service with `qwen2.5:3b` installed, then run `python -m app.cli --mode ollama`. This model path has contract tests but has not been evaluated against a running model in the recorded benchmark.
+For synthesis, run a local Ollama service with `qwen2.5:3b` installed, then run `python -m app.cli --mode ollama`. An alternative llama.cpp backend is selected with `GENERATION_BACKEND=llamacpp` and `--mode model`. The measured Qwen2.5-0.5B pilot produced unsupported answers despite valid citation IDs; see [the challenge evaluation](docs/challenge-evaluation.md). Keep extractive mode as the default.
 
 For vector retrieval, install the `nomic-embed-text` Ollama model, set `DATABASE_URL` for a **dedicated** PostgreSQL database, then run:
 
@@ -92,6 +92,8 @@ For a separate frontend deployment, set `NEXT_PUBLIC_API_URL` at build time and 
 
 ## Evaluation
 
+**New challenge run, 1 October 2026:** 8/8 relevant-article hits on new answerable questions, but **0/4 retrieval abstentions on near-domain unanswerable questions**. A real local Qwen2.5-0.5B generated all 16 responses with valid schemas and citation IDs, yet invented prices, a deadline and a penalty. [Raw outputs, protocol and failure analysis](docs/challenge-evaluation.md). Citation validity is not answer faithfulness; independent human quality labels and vector-model comparison remain pending.
+
 Recorded locally on 2026-09-29, Python 3.10.4 / Windows, using BM25 without an LLM:
 
 | Measure | Observed result |
@@ -99,7 +101,7 @@ Recorded locally on 2026-09-29, Python 3.10.4 / Windows, using BM25 without an L
 | Expected article found in top 5 chunks | 20/20 (100%) |
 | Mean reciprocal rank at 5 | 0.925 |
 | Abstention on unrelated questions | 5/5 |
-| Backend tests | 13 passed; pgvector integration requires a dedicated database |
+| Backend tests (updated 1 October) | 16 passed; pgvector integration requires a dedicated database |
 | Browser tests | 2 passed: evidence flow and mobile layout |
 
 These are **development-set results**, not a held-out benchmark, legal accuracy score, or production guarantee. Questions were authored against this small corpus. Five easy negative examples do not establish reliable abstention on difficult near-domain questions. [Per-question results, hashes and environment](evaluation/results.json) are committed.
