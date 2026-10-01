@@ -1,7 +1,7 @@
 # EU AI Act Evidence Explorer
 
 [![CI](https://github.com/suprkco/rag-eu-ai-act/actions/workflows/ci.yml/badge.svg)](https://github.com/suprkco/rag-eu-ai-act/actions/workflows/ci.yml)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/suprkco/rag-eu-ai-act)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-rag--eu--ai--act.onrender.com-brightgreen)](https://rag-eu-ai-act.onrender.com/)
 
 **A local retrieval and optional generation prototype with inspectable legislative evidence.**
 
@@ -11,6 +11,8 @@ An answer about AI regulation is difficult to review without a path back to its 
 This prototype retrieves passages from 20 selected AI Act and GDPR articles and returns source-owned citations, with an optional local-model synthesis.
 
 ## Demo
+
+**Live:** https://rag-eu-ai-act.onrender.com/ (source excerpts only, no model; a free instance can take about a minute to wake up). Metrics are public at [/metrics](https://rag-eu-ai-act.onrender.com/metrics) and the API docs at [/docs](https://rag-eu-ai-act.onrender.com/docs).
 
 Run `python -m app.cli` for a terminal session, or ask one question:
 
