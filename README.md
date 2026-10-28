@@ -131,7 +131,7 @@ The point is to catch silent drift: a rising abstention rate, a falling median r
 - **Failure is explicit.** No matching chunks produces an abstention; model failures return an error rather than invented prose.
 - **Separate measurements.** Retrieval quality, protocol correctness and generated-answer faithfulness are different questions.
 
-An [attributed HKUDS/LightRAG comparison harness](docs/open-source-baseline.md) exports this corpus and measures source-document references from an external LightRAG instance. It is not a copy of the upstream engine, and no live LightRAG performance is claimed.
+A [comparison harness](docs/open-source-baseline.md) exports this corpus to an external [LightRAG](https://github.com/HKUDS/LightRAG) instance and scores the source documents it returns. Thanks to HKUDS for LightRAG.
 
 ## Limitations and next steps
 

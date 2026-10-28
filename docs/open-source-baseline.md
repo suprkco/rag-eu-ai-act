@@ -1,10 +1,10 @@
-# Reusing open source without disguising authorship
+# LightRAG comparison
 
-## Selected upstream: HKUDS/LightRAG
+## Upstream: HKUDS/LightRAG
 
 [LightRAG](https://github.com/HKUDS/LightRAG) is maintained by HKUDS and its contributors. Its upstream [MIT license](https://github.com/HKUDS/LightRAG/blob/main/LICENSE) names the LightRAG Team. API compatibility was inspected at commit `453dce83d6d0354a06e46c8d4029a0895c4e054b` on 2026-09-29.
 
-This repository contains **an original evaluation harness**, not a renamed copy of LightRAG. The upstream retrieval engine, graph construction and research contributions belong to their authors. No upstream code is vendored or relicensed here.
+LightRAG runs as an external service: the harness here only exports the corpus and reads its results. No LightRAG code is vendored or relicensed in this repository.
 
 ## Reproducible comparison setup
 
