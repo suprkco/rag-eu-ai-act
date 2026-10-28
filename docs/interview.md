@@ -8,4 +8,4 @@
 
 Be ready to explain: why citation IDs cannot establish factual correctness; why legal versioning matters; how a prompt injection could still affect generated prose; what authentication and rate limiting a hosted version would need.
 
-Do not claim a deployed legal assistant, model benchmark, client engagement, or independent evaluation. This is an AI-assisted portfolio prototype. Before presenting it, reproduce the commands and inspect at least one failing or ambiguous retrieval case yourself.
+Do not claim a deployed legal assistant, model benchmark, client engagement, or independent evaluation. This is a portfolio prototype. Before presenting it, reproduce the commands and inspect at least one failing or ambiguous retrieval case yourself.
